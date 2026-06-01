@@ -2,7 +2,7 @@
 paperApiVersion = "1.21.4-R0.1-SNAPSHOT"
 adventureApiVersion = "4.16.0"
 typeWriterVersion = "0.9.0"
-lombokVersion = "1.18.30"
+lombokVersion = "1.18.36"
 placeholderapiVersion = "2.11.6"
 miniplaceholdersApiVersion = "3.0.1"
 floodgateApiVersion = "2.2.3-SNAPSHOT"

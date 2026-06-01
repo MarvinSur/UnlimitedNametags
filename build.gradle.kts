@@ -135,7 +135,7 @@ tasks.named<ShadowJar>("shadowJar") {
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-    options.release.set(17)
+    options.release.set(21)
 
 }
 tasks.withType<Javadoc> {
@@ -143,13 +143,13 @@ tasks.withType<Javadoc> {
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
 
     disableAutoTargetJvm()
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 }
 
 tasks.named<Jar>("jar").configure {
