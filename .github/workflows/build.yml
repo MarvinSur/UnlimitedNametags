@@ -18,6 +18,7 @@ jobs:
 
       - name: Setup Java 25
         uses: actions/setup-java@v4
+        id: setup-java
         with:
           distribution: temurin
           java-version: 25
@@ -28,6 +29,8 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew shadowJar --no-daemon
+        env:
+          JAVA_HOME: ${{ steps.setup-java.outputs.path }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
