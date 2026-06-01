@@ -136,13 +136,6 @@ tasks.named<ShadowJar>("shadowJar") {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.release.set(21)
-    options.isFork = true
-    options.forkOptions.jvmArgs!!.addAll(listOf(
-        "--add-opens=java.base/java.lang=ALL-UNNAMED",
-        "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
-        "--add-opens=java.base/java.util=ALL-UNNAMED",
-        "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED"
-    ))
 }
 tasks.withType<Javadoc> {
     options.encoding = "UTF-8"
