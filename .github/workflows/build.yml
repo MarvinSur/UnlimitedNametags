@@ -2,9 +2,9 @@ name: Build UnlimitedNametags
 
 on:
   push:
-    branches: [ "main", "master", "dev" ]
+    branches: ["main", "master", "dev"]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
   workflow_dispatch:
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew shadowJar --no-daemon
+        run: ./gradlew shadowJar --no-daemon --stacktrace
         env:
           # Kasih tau Gradle dimana Java 25 ada buat toolchain
           JAVA_25_HOME: ${{ steps.setup-java-25.outputs.path }}
