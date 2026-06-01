@@ -152,9 +152,8 @@ kotlin {
     jvmToolchain(25)
 }
 
-tasks.named<Jar>("jar").configure {
-    dependsOn("shadowJar")
-}
+// Dihapus: jar dependsOn shadowJar bikin circular dependency
+// di Kotlin 2.2.0+. Langsung run shadowJar aja.
 tasks.named<Delete>("clean").configure {
     delete(tasks.named<ShadowJar>("shadowJar").get().archiveFile)
 }
